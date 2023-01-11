@@ -50,6 +50,8 @@ class Graph:
                 self.nodes[row,col] = node_val
                 self.print_graph()
 
+        test = None
+
 
 if __name__ == '__main__':
     graph = Graph(6,5)
