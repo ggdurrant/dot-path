@@ -1,4 +1,5 @@
 import numpy as np
+import keyboard
 
 class Dot:
     x = None
@@ -25,7 +26,7 @@ class Graph:
 
         self.print_graph()
 
-    def print_graph(self):
+    def print_graph(self, cur_row=None, cur_col=None):
         for row in range(len(self.nodes)):
             row_str = ''
             for col in range(len(self.nodes[row])):
@@ -37,20 +38,18 @@ class Graph:
         col = 0
         for row in range(self.height):
             for col in range(self.width):
-                # while True:
-                    # try: 
-                    #     while node_val < 0 or node_val > 9:
-                    #         node_val = int(input('Enter node value: '))
-                    #     break
-                    # except ValueError:
-                    #     print('Enter a positive integer less than 10. Try again: ')
-                node_val = input('Enter node value: ')
+
+                node_val = input('Enter node value:')
+
                 if node_val == '':
                     node_val = '-'
                 self.nodes[row,col] = node_val
-                self.print_graph()
+                self.print_graph(row, col)
 
         test = None
+
+    def handleLeft(self):
+        print('left')
 
 
 if __name__ == '__main__':
